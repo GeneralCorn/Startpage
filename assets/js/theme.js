@@ -9,6 +9,7 @@ const bodyBackground = document.getElementById('#body');
 
 const enableDark = () => {
 	document.body.classList.add('darktheme');
+  //document.getElementById("whalebox").className = "lightTheme";
 	localStorage.setItem('darkTheme', 'enabled');
 	themeToggle.innerHTML = `<i id="themeButton__icon" icon-name="sun"></i>`;
 	lucide.createIcons();

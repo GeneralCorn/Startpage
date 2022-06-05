@@ -26,27 +26,311 @@
 					<div id="hour"></div>
 					<div id="separator"></div>
 					<div id="minutes"></div>
-				</div>
-				<div id="greetings"></div>
+				</div> <div id="greetings"></div>
 			</div>
 
-			<!-- Date and Weather  -->
+			<!--whale-->
+
+			<div>
+<style>
+
+.whalebox{
+		fill: #FFFFFF;
+		stroke: none;				
+}
+
+.whale {
+	animation: whale-up-down 12s infinite cubic-bezier(.6,0,.4,1);
+}
+
+
+/* Tail & Left Body */
+.tail {
+	/* transform-origin: center; */
+	transform-origin: 14.835px 42.795px;
+	transform: skew(0, -15deg) translate(-.4px, 2.5px) rotate(36deg);
+	animation: tail;
+}
+.body-top-left {
+	/* transform-origin: top right; */
+	transform-origin: 58.5px 24.5px;
+	transform: rotate(-3deg);
+	animation: body-top-left;
+}
+.body-lower-left {
+	/* transform-origin: bottom right; */
+	transform-origin: 46.74px 56.36px;
+	transform: rotate(-3deg);
+	animation: body-lower-left;
+}
+.tail,
+.body-top-left,
+.body-lower-left {
+	animation-duration: 4s;
+	animation-delay: -1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(.6,0,.4,1);
+}
+
+
+/* Eye */
+.pupil {
+	transform-origin: 62.5px 42.5px;
+/* 	transform-origin: left center; */
+	transform: rotate(-5deg);
+	animation: look-around 12s infinite cubic-bezier(.6,0,.4,1);
+}
+
+
+/* Flipper */
+.flipper {
+	/* transform-origin: 80% 0%; */
+	transform-origin: 48.544px 48.32px;
+	transform: rotate(-10deg) scaleY(.7);
+	stroke-width: 1.2;
+	animation: flipper 12s infinite ease-in-out;
+}
+
+
+/* Spray Streams */
+.sprays path {
+	animation-duration: 12s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-out;
+}
+.spray-1 {
+	/* path length: 19.5708 */
+	stroke-dasharray: 19.57;
+	/* round down the length slightly for the stroke-dasharray */
+	stroke-dashoffset: 58.7125;
+	/* dash	offset should be 3x the length */
+	animation: spray-1;
+}
+.spray-2 {
+	/* path length: 48.2011 */
+	stroke-dasharray: 48.2;
+	stroke-dashoffset: 144.6033;
+	animation: spray-2;
+}
+.spray-3 {
+	/* path length: 29.0627 */
+	stroke-dasharray: 29.06;
+	stroke-dashoffset: 87.1881;
+	animation: spray-3;
+}
+.spray-4 {
+	/* path length: 34.7940 */
+	stroke-dasharray: 34.79;
+	stroke-dashoffset: 104.382;
+	animation: spray-4;
+}
+.spray-5 {
+	/* path length: 37.0617 */
+	stroke-dasharray: 37.06;
+	stroke-dashoffset: 111.1851;
+	animation: spray-5;
+}
+.spray-6 {
+	/* path length: 22.1995 */
+	stroke-dasharray: 22.19;
+	stroke-dashoffset: 66.5985;
+	animation: spray-6;
+}
+.spray-7 {
+	/* path length: 14.5739 */
+	stroke-dasharray: 14.57;
+	stroke-dashoffset: 43.7218;
+	animation: spray-7;
+}
+
+
+/* Tail Flapping */
+@keyframes tail {
+	50% { transform: skew(0, 20deg) translate(.8px, -4.3px) rotate(28deg); }
+}
+@keyframes body-top-left {
+	50% { transform: rotate(2.5deg) scaleX(.92); }
+}
+@keyframes body-lower-left {
+	50% { transform: rotate(5deg); }
+}
+
+
+/* Whale Up & Down Movement */
+@keyframes whale-up-down {
+	0%   { transform: translateY(0); }
+	30%  { transform: translateY(10px); }
+	60%  { transform: translateY(0); }
+	80%  { transform: translateY(4px); }
+	100% { transform: translateY(0); }
+}
+
+
+/* Eye Direction */
+@keyframes look-around {
+	0%   { transform: rotate(5deg); }
+	15%  { transform: rotate(5deg); }
+	25%  { transform: rotate(100deg); }
+	55%  { transform: rotate(10deg); }
+	60%  { transform: rotate(-40deg); }
+	70%  { transform: rotate(-50deg); }
+	85%  { transform: rotate(20deg); }
+	100% { transform: rotate(5deg); }
+}
+
+/* Flipper Flapping */
+.flipper-up { 			  stroke-width: 1.2; transform: rotate(-10deg) scaleY(.7);  }
+.flipper-little-up {  stroke-width: 1.1; transform: rotate(-10deg) scaleY(.85); }
+.flipper-down { 		  stroke-width: 1;   transform: rotate(-10deg) scaleY(1);   };
+// We're using LESS mixins here, to make the flipper keyframes easier to read
+
+@keyframes flipper {
+	0%   { .flipper-up; }
+	10%  { .flipper-down; }
+	20%  { .flipper-up; }
+
+	26%  { .flipper-down; }
+	27%  { .flipper-little-up; }
+	29%  { .flipper-down; }
+	30%  { .flipper-little-up; }
+	31%  { .flipper-down; }
+	33%  { .flipper-little-up; }
+	34%  { .flipper-down; }
+	36%  { .flipper-little-up; }
+	37%  { .flipper-down; }
+	39%  { .flipper-little-up; }
+	40%  { .flipper-down; }
+	41%  { .flipper-little-up; }
+	43%  { .flipper-down; }
+	
+	45%  { .flipper-little-up; }
+	49%  { .flipper-down; }
+	52%  { .flipper-little-up; }
+	55%  { .flipper-down; }
+	
+	60%  { .flipper-up; }
+	70%  { .flipper-down; }
+	80%  { .flipper-up; }
+	90%  { .flipper-down; }
+	100% { .flipper-up; }
+}
+
+
+/* Spray Streams */
+@keyframes spray-1 {
+	62%  { /* initial */ stroke-dashoffset: 58.7125; }
+	68%  { /* final */ stroke-dashoffset: 19.5708; }
+	100% { /* final */ stroke-dashoffset: 19.5708; }
+}
+@keyframes spray-2 {
+	60%  { /* initial */ stroke-dashoffset: 144.6033;}
+	70%  { /* final */ stroke-dashoffset: 48.2011; }
+	100% { /* final */ stroke-dashoffset: 48.2011; }
+}
+@keyframes spray-3 {
+	55%  { /* initial */ stroke-dashoffset: 87.1881; }
+	65%  { /* final */ stroke-dashoffset: 29.0627; }
+	100% { /* final */ stroke-dashoffset: 29.0627; }
+}
+@keyframes spray-4 {
+	56%  { /* initial */ stroke-dashoffset: 104.382; }
+	72%  { /* final */ stroke-dashoffset: 34.7940; }
+	100% { /* final */ stroke-dashoffset: 34.7940; }
+}
+@keyframes spray-5 {
+	60%  { /* initial */ stroke-dashoffset: 111.19; }
+	68%  { /* final */ stroke-dashoffset: 37.0617; }
+	100% { /* final */ stroke-dashoffset: 37.0617; }
+}
+@keyframes spray-6 {
+	56%  { /* initial */ stroke-dashoffset: 66.599; }
+	70%  { /* final */ stroke-dashoffset: 22.1995; }
+	100% { /* final */ stroke-dashoffset: 22.1995; }
+}
+@keyframes spray-7 {
+	62%  { /* initial */ stroke-dashoffset: 43.7218; }
+	68%  { /* final */ stroke-dashoffset: 14.5739; }
+	100% { /* final */ stroke-dashoffset: 14.5739; }
+}
+
+</style>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80" viewBox="0 0 80 80" version="1.1">
+
+<a href="https://www.google.com">				
+<g class="whale-container" fill="none" stroke="#3279FD" stroke-linecap="round" stroke-linejoin="round">
+
+<g class="whale">
+
+<path class="whalebox"
+d="
+M 41 60 m -34 -9 C 10 61 84 76 80 48 C 92 7 7 23 7 51"
+/>
+
+<!-- 	 Tail	 -->
+<path class="tail" d="M21.4 43.9C20.9 45.4 19.7 48.9 16.7 50.6 13.6 52.4 11.8 51.7 8.3 52.1 14.2 46.3 12.2 43.3 14.9 40.8 12.5 39.2 14.4 37.8 13 34.3 14.9 34.4 18.5 32.9 19.7 33.9 20.9 34.9 20.5 36.3 21.1 38.3"/>
+
+
+																										<!-- 	Main Body	 -->
+																															<path class="body-lower-right" d="M 78.5 46.1 C 75.5 46.1 75.2 47.3 73.5 48 C 75.5 47.4 78 47.6 78 47.6 C 75.5 54.1 66 57 57 57 C 53 57 52 57 49 56"/>
+
+																																<path class="body-lower-left" d="M 37 53 C 34 53 28 51.7 20 47"/>
+																																      
+																																						<path class="body-top-right" d="M58.5 24.5C73.5 24.5 77.5 34.5 77.5 39.5 77.5 41.5 77.5 45.1 78.5 46.1"/>
+
+																																												<path class="body-top-left" d="M21 42C34.5 42 41.5 24.5 58.5 24.5"/>
+
+
+																																																		<path class="smile" d="M69.5 47.5C70.6 49.2 73 48.1 74 47.9"/>
+
+
+																																																								<!-- 	Flipper	 -->
+																																																														<path class="flipper" d="M52.5 48.6C51.4 51.7 49.2 55.5 46.6 58.6 44 61.6 39.6 63 34.4 61.1 31.1 60 33.1 55.1 37.6 52.2 40 50.7 44.4 49.9 43 48.3"/>
+
+																																																																				<!-- 	 Eye	 -->
+																																																																										<circle class="eye" stroke="#3279FD" stroke-linecap="round" stroke-linejoin="round" cx="62.5" cy="42.5" r="4"/>
+
+																																																																																<circle class="pupil" fill="#3279FD" cx="64.25" cy="42.25" r="2.25" stroke="none"/>
+
+
+																																																																																						<!-- 	Blow Hole	 -->
+																																																																																												<path class="blow-hole" d="M53 27.9C53.8 26.9 55.5 27.4 56 26.9"/>
+
+																																																																																																</g>
+
+
+
+																																																																																																				<!--  Spray	 -->
+																																																																																																								<g class="sprays">
+																																																																																																														<path class="spray-1" d="M54 27C53 21 51 16.5 46.5 16.5 42.9 16.5 42.5 19.5 42.5 19.5"/>
+
+																																																																																																																				<path class="spray-2" d="M53.5 27.5L53.5 18C53.5 8.5 51.5 4 47 4 44 4 42.5 6.5 42.5 8.5 42.5 10 43.5 12.5 46 12.5 48 12.5 48.5 11 48.5 10 48.5 7.5 46 7.5 45.5 8.5"/>
+
+																																																																																																																										<path class="spray-3" d="M54.4 27.2C54 15.5 56.5 3 48.5 0.5"/>
+
+																																																																																																																																<path class="spray-4" d="M55.5 27C55.5 27 56 15 56.5 10 57 5 59.5 1.5 63.5 1.5 67.5 1.5 68.5 3.5 68.5 3.5"/>
+
+																																																																																																																																						<path class="spray-5" d="M55.5 27C55.5 27 56.5 20 57.5 14.5 58.5 9 61 7.5 63.5 7.5 66 7.5 67 9 67 10.5 67 12 66 13.5 64.5 13.5 63 13.5 62.5 12.5 62.5 12 62.5 11 63 10.5 63.5 10.5"/>
+
+																																																																																																																																												<path class="spray-6" d="M55.5 27C55.5 21.5 62.5 11 70.5 19"/>
+
+																																																																																																																																																		<path class="spray-7" d="M55.5 27C55.5 21.5 61.5 18.5 66 21"/>
+																																																																																																																																																								
+																																																																																																																																																						</g>
+																																																																																																																																																										
+																																																																																																																																																										
+																																																																																																																																																								</g>
+
+</svg>
+
+			</div>
+
+<!-- Date and Weather  -->
 
 			<div class="weatherBlock">
 				<div class="date">
 					<div id="month"></div>
 					<div id="day"></div>
-				</div>
-				<div class="weather">
-					<div class="weatherIcon">
-						<img src="assets/icons/OneDark/unknown.png" />
-					</div>
-					<div class="weatherValue">
-						<p>- °<span class="g">c</span></p>
-					</div>
-					<div class="weatherDescription">
-						<p></p>
-					</div>
 				</div>
 			</div>
 
@@ -74,8 +358,6 @@
 		<script>
 			lucide.createIcons();
 		</script>
-	</body>
 
-	<!-- Developed and designed by Miguel Ávila: -->
-	<!-- https://avila.sh-->
+	</body>
 </html>

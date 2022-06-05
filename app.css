@@ -12,6 +12,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap'); /* Font Import */
 
+#whalebtn {
+		border: none;
+		background: none;
+} 
+
 :root {
   /* Font Size */
   --fg-primary: 12vh; /* Time and Greetings */
@@ -46,7 +51,7 @@
   /* Fonts Color */
   --fg: #d8dee9; /* Foreground color */
   --sfg: #2c292e; /* Secondary Foreground color */
-
+	
   /* Image background  */
   --imgcol: linear-gradient(
     rgba(0, 0, 0, 0.85),
@@ -369,3 +374,4 @@ body {
     padding-right: 100px;
   }
 }
+
